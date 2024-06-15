@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Employee Details</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-4">
+    <h1 class="mb-4">Add Employee Details</h1>
+    <form action="/addEmployeeDetails" method="post" th:object="${EmployeeEntity}" class="needs-validation" novalidate>
+
+        <div class="form-group">
+            <label for="Id">Employee Id:</label>
+            <input type="number" class="form-control" id="Id" name="Id" required placeholder="Enter Employee Id" />
+            <div class="invalid-feedback">
+                Please enter a valid Employee Id.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="firstName">First Name:</label>
+            <input type="text" class="form-control" id="firstName" name="firstName" required placeholder="Enter Employee First Name" />
+            <div class="invalid-feedback">
+                Please enter a valid First Name.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input type="text" class="form-control" id="lastName" name="lastName" required placeholder="Enter Employee Last Name" />
+            <div class="invalid-feedback">
+                Please enter a valid Last Name.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="emailId">Email:</label>
+            <input type="email" class="form-control" id="emailId" name="emailId" required placeholder="Enter Email Id" />
+            <div class="invalid-feedback">
+                Please enter a valid Email Id.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="location">Location:</label>
+            <input type="text" class="form-control" id="location" name="location" required placeholder="Enter Location" />
+            <div class="invalid-feedback">
+                Please enter a valid Location.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="mobileNo">Mobile No:</label>
+            <input type="number" class="form-control" id="mobileNo" name="mobileNo" required placeholder="Enter Mobile No" />
+            <div class="invalid-feedback">
+                Please enter a valid Mobile No.
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form><br><br>
+
+    <a th:href="@{/home}" class="btn btn-secondary">Back to Employee List</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+            var forms = document.getElementsByClassName('needs-validation');
+            Array.prototype.filter.call(forms, function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
+</script>
+</body>
+</html>

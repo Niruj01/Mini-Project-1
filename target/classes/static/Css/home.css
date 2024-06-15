@@ -1,0 +1,44 @@
+.nav{
+    background-color: aqua;
+    display: flex;
+    justify-content: space-between;
+}
+
+.title{
+    font-size: 26px;
+}
+
+form{
+    padding: 28px;
+    font-size: 23px;
+}
+
+h3{
+    margin-left: 701px;
+    font-size: 30px;
+    margin-top: 11px;
+}
+
+.add-Btn{
+    text-decoration: none;
+    color: white;
+    background-color: blue;
+    padding: 6px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: #04AA6D;
+  color: white;
+}

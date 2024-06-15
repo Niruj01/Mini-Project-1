@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee View</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-4 tableList">
+    <h1 class="mb-4">Employee View</h1>
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th>Employee Id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Location</th>
+                <th>Mobile No</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="employee : ${employees}">
+                <td th:text="${employee.id}"></td>
+                <td th:text="${employee.firstName}"></td>
+                <td th:text="${employee.lastName}"></td>
+                <td th:text="${employee.emailId}"></td>
+                <td th:text="${employee.location}"></td>
+                <td th:text="${employee.mobileNo}"></td>
+                <td>
+                    <a th:href="@{/updateForm/{id}(id=${employee.id})}" class="btn btn-warning btn-sm mr-1">Update</a>
+                    <a th:href="@{/deleteEmployee/{id}(id=${employee.id})}" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div><br><br>
+    <a th:href="@{/home}" class="btn btn-secondary">Back to Employee List</a>
+</div>
+</body>
+</html>
